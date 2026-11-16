@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#297d82">
+  <meta name="description" content="رحلة ملتقى سلام الثقافية: تعرّف على الدول المشاركة، أجب عن الألغاز، واجمع ملصقات رحلتك.">
+  <title>ملتقى سلام | اختلافنا حكاية وسلامنا يجمعنا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#welcome" aria-label="ملتقى سلام - البداية">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/salam-logo.png" alt=""></span>
+        <span class="brand-name">ملتقى <b>سلام</b></span>
+      </a>
+      <div class="topbar-meta"><span class="event-dot"></span> جامعة تبوك <span class="meta-divider">•</span> 16 نوفمبر 2026</div>
+    </header>
+
+    <main id="app" aria-live="polite">
+      <section class="screen active" id="welcome" data-screen="welcome">
+        <div class="welcome-grid">
+          <div class="welcome-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> أهلًا بك في ملتقى سلام</p>
+            <h1>اختلافنا حكاية،<br><em>وسلامنا يجمعنا.</em></h1>
+            <p class="lead">رحلة صغيرة بين ثقافات العالم؛ اكتب اسمك، اكتشف حكايات الدول، واجمع ملصقات رحلتك.</p>
+            <form id="name-form" class="name-form">
+              <label for="visitor-name">ما اسمك؟</label>
+              <div class="input-row"><input id="visitor-name" name="name" type="text" maxlength="40" autocomplete="given-name" placeholder="اكتب اسمك هنا" required><button class="button button-primary" type="submit">ابدأ رحلتك <span aria-hidden="true">←</span></button></div>
+              <p class="field-note" id="name-error" role="status"></p>
+            </form>
+            <p class="privacy-note"><span class="lock-icon" aria-hidden="true">◈</span> لا نطلب بيانات شخصية. يُحفظ تقدمك على هذا الجهاز فقط.</p>
+          </div>
+          <div class="welcome-art" aria-label="ملصقات ملتقى سلام للدول المشاركة">
+            <div class="art-stamp stamp-one"><img src="assets/stickers/jordan.png" alt="ملصق الأردن"></div>
+            <div class="art-stamp stamp-two"><img src="assets/stickers/india.png" alt="ملصق الهند"></div>
+            <div class="art-stamp stamp-three"><img src="assets/stickers/nepal.png" alt="ملصق نيبال"></div>
+            <div class="art-caption"><span>13 دولة</span><span class="caption-spark">✳</span><span>حكاية واحدة</span></div>
+            <div class="art-ring ring-a"></div><div class="art-ring ring-b"></div>
+          </div>
+        </div>
+        <footer class="welcome-foot"><span>اختلافنا حكاية</span><span class="foot-rule"></span><span>وسلامنا يجمعنا</span></footer>
+      </section>
+
+      <section class="screen" id="intro" data-screen="intro">
+        <div class="section-kicker">01 <span>التعرّف إلى الملتقى</span></div>
+        <div class="intro-layout">
+          <div><p class="eyebrow">حياك الله <span id="hello-name"></span></p><h2>هنا تلتقي <em>الحكايات.</em></h2><p class="lead intro-lead">ملتقى سلام مساحة للتعارف والتبادل الثقافي بين الطلاب من مختلف الدول. نحتفي بتنوع ثقافاتنا وعاداتنا، ونجتمع على قيم التواصل والاحترام والتآلف.</p><div class="stat-line"><strong>13</strong><span>دولة مشاركة<br>وثقافات يجمعها السلام</span></div><p class="journey-copy">رحلتك تبدأ بألغاز مستوحاة من كتيب الملتقى، ثم تجوّل بين الأركان واجمع الملصقات الثلاثة عشر في جوازك الرقمي.</p><button class="button button-primary" data-action="start-quiz">ابدأ التحدي <span aria-hidden="true">←</span></button></div>
+          <div class="country-ribbon" id="intro-countries" aria-label="الدول المشاركة"></div>
+        </div>
+      </section>
+
+      <section class="screen journey-screen" id="journey" data-screen="journey">
+        <nav class="journey-nav" aria-label="التنقل في الرحلة"><a href="#quiz-zone">الألغاز</a><a href="#collection-zone">الملصقات <span id="nav-sticker-count">0/13</span></a></nav>
+        <div id="quiz-zone" class="journey-block"><div class="section-kicker">02 <span>ألغاز من حول العالم</span></div>
+        <div class="quiz-layout">
+          <aside class="quiz-aside"><p class="eyebrow">اختبر ملاحظتك</p><h2>كل مكان<br>له <em>حكاية.</em></h2><p>اكتب اسم الدولة التي تصفها الإشارة. اكتب إجابتك بنفسك، ثم تحقق منها.</p><div class="quiz-progress-wrap"><div class="progress-label"><span id="quiz-count">اللغز 1 من 8</span><span id="quiz-percent">13٪</span></div><div class="progress-track"><span id="quiz-progress"></span></div></div><button class="text-button" data-action="go-collection">الانتقال إلى الملصقات ↓</button></aside>
+          <div class="quiz-card">
+            <div class="puzzle-number" id="puzzle-number">01</div><div class="puzzle-tag" id="puzzle-tag">لغز دولة</div>
+            <h3 id="puzzle-question"></h3>
+            <form id="answer-form"><label for="answer-input" id="answer-label">اكتب اسم الدولة</label><input id="answer-input" type="text" autocomplete="off" placeholder="إجابتك هنا"><p class="answer-feedback" id="answer-feedback" role="status"></p><div class="quiz-actions"><button class="button button-primary" type="submit" id="check-answer">تحقق من الإجابة</button><button class="button button-quiet" type="button" id="skip-question">تجاوز</button></div></form>
+          </div>
+        </div></div>
+        <div id="collection-zone" class="journey-block collection-block">
+        <div class="section-kicker">03 <span>جواز سلام الرقمي</span></div>
+        <div class="collection-heading"><div><p class="eyebrow">تجوّل بين الأركان</p><h2>اجمع حكايات <em>العالم.</em></h2><p class="lead">كل ملصق ذكرى من دولة. اختر الدولة التي زرت ركنها وأضف ملصقها إلى جوازك.</p></div><div class="collection-counter"><strong id="sticker-count">0</strong><span>من 13 ملصقًا</span><div class="mini-progress"><span id="sticker-progress"></span></div></div></div>
+        <div class="passport-bar"><span class="passport-icon" aria-hidden="true">✳</span><span><b id="passport-name"></b> <span>— جواز رحلتك</span></span><button class="text-button" data-action="change-name">تغيير الاسم</button></div>
+        <div class="sticker-grid" id="sticker-grid"></div>
+        <div class="collection-bottom"><span id="collection-hint">كلما زرت ركنًا، أضف ملصقه إلى جوازك.</span><button class="button button-outline" data-action="finish-quiz">العودة إلى الألغاز ↑</button></div>
+        </div>
+      </section>
+
+      <section class="screen" id="complete" data-screen="complete">
+        <div class="completion-card"><div class="completion-flower" aria-hidden="true">✳</div><p class="eyebrow">اكتملت الرحلة</p><h2>شكرًا لأنك كنت<br><em>جزءًا من الحكاية.</em></h2><p class="completion-message">يا <strong id="complete-name"></strong>، سعدنا بوجودك ومشاركتك لحظات ملتقى سلام. اختلافنا حكاية، وسلامنا يجمعنا.</p><div class="completion-stat"><strong>13</strong><span>دولة، وذكرى<br>تجمعنا</span></div><div class="completion-actions"><button class="button button-primary" data-action="view-stickers">استعرض ملصقاتي</button><button class="button button-quiet" data-action="restart">ابدأ من جديد</button></div></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>ملتقى سلام <i>·</i> جامعة تبوك</span><span>اختلافنا حكاية وسلامنا يجمعنا</span></footer>
+  </div>
+  <dialog id="sticker-dialog" class="sticker-dialog"><button class="dialog-close" aria-label="إغلاق" data-action="close-dialog">×</button><div class="dialog-image-wrap"><img id="dialog-image" src="" alt=""></div><div class="dialog-copy"><p class="eyebrow" id="dialog-eyebrow">ملصق جديد في جوازك</p><h2 id="dialog-title"></h2><p id="dialog-description">أُضيفت حكاية جديدة إلى رحلتك.</p><div class="dialog-actions"><button class="button button-undo" id="undo-sticker" data-action="undo-sticker">تراجع عن الإضافة</button><button class="button button-primary" data-action="sticker-continue">متابعة الرحلة</button></div></div></dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
